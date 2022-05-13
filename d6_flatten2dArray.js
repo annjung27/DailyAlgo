@@ -25,7 +25,7 @@ const twoDimArr1 = [
    * @returns {Array<any>} The flattened array that should be one dimensional.
    */
   function flatten2dArray(twoDimArr) {
-    // code here
+    
   }
   
   /*****************************************************************************/
