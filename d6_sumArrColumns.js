@@ -18,7 +18,11 @@
    * @returns {Array<number>} The column sums.
    */
   function sumArrColumns(nums1, nums2) {
-    // code here
+    let newArr = [];
+    for (let i=0; i< nums1.length; i++){
+      newArr.push(nums1[i] + nums2[i]);
+    }
+    return newArr;
   }
   
   // Tests

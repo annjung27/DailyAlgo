@@ -41,9 +41,31 @@ const expected8 = null;
  * @returns {?number} The second largest int from the given array or null.
  *    The ? in front means it's nullable.
  */
-function secondLargest(nums) {
-  // code here
+function secondLargest2(nums) {
+  if(nums.length < 2){
+    return null;
+  }
+  let largest = nums[0];
+  let secondLargest = nums[1];
+  for (let i=1; i < nums.length; i++){
+    let num = nums[i];
+    if(secondLargest === largest && num < largest){
+      secondLargest = nums[i];
+    } else if (num > largest){
+      secondLargest = largest;
+      largest = num;
+    } else if (num > secondLargest && num < largest){
+      secondLargest = num;
+    }
+
+    if(largest === secondLargest){
+      return null;
+    }
+  }
+  return secondLargest;
 }
+
+
 
 // Tests
 const result1 = secondLargest2(nums1);
@@ -120,6 +142,8 @@ function secondLargest(nums = []) {
  * @param {Array<number>} nums
  * @returns {?number}
  */
+
+
 function secondLargest2(nums = []) {
   if (nums.length < 2) {
     return null;
@@ -132,7 +156,7 @@ function secondLargest2(nums = []) {
     const num = nums[i];
 
     if (secondLargest === max && num < max) {
-      secondLargest = nums[i];
+      secondLargest = num;
     } else if (num > max) {
       secondLargest = max; // second largest equals old max
       max = num;

@@ -25,9 +25,21 @@ const twoDimArr1 = [
    * @returns {Array<any>} The flattened array that should be one dimensional.
    */
   function flatten2dArray(twoDimArr) {
-    
+    const oneDimArr = [];
+    for (let i = 0; i<twoDimArr.length; i++ ){
+      for (let j=0; j < twoDimArr[i].length; j++){
+        oneDimArr.push(twoDimArr[i][j])
+      }
+    } return console.log(oneDimArr);
   }
   
+  flatten2dArray(twoDimArr1);
+  flatten2dArray(twoDimArr2);
+  flatten2dArray(twoDimArr3);
+  
+  
+
+
   /*****************************************************************************/
   
   /**
