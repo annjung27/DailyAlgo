@@ -31,7 +31,34 @@
    * @param {string} str The string to encode.
    * @returns {string} The given string encoded.
    */
-  function encodeStr(str) {}
+  function encodeStr(str) {
+    let encodedStr ="";
+    
+
+    if(str.length <= 1){
+      return str;
+    }
+    for(let i=0; i<str.length; i++){
+      let count = 1;
+      let char = str[i];
+
+      while(char === str[i+1]){
+        count++;
+        i++;
+      }
+      encodedStr += char + count;      
+    }
+    if (str.length == encodedStr.length){
+      return str;
+    } else {
+      return encodedStr;
+    }    
+  }
+
+  console.log(encodeStr(str1));
+  console.log(encodeStr(str2));
+  console.log(encodeStr(str3));
+  console.log(encodeStr(str4));
   
   /*****************************************************************************/
   

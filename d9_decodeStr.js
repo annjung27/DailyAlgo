@@ -17,7 +17,27 @@ const expected2 = "aaabbccccccccccccdddddddddd";
  *    after indicating how many times the character occurs.
  * @returns {string} The given str decoded / expanded.
  */
-function decodeStr(str) {}
+function decodeStr(str) {
+  let deStr = "";
+  let char = str[0];
+  let numChar = "";
+
+  for(let i=1; i<str.length; i++){
+    let int = parseInt(str[i]);
+
+    if(isNaN(int)){
+      deStr += char.repeat(numChar);
+      char = str[i];
+      numChar = "";
+    } else {
+      numChar += int;
+    }
+  }
+  return deStr + char.repeat(numChar);
+}
+
+console.log(decodeStr(str1));
+console.log(decodeStr(str2));
 
 /*****************************************************************************/
 
